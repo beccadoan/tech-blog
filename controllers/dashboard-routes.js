@@ -6,15 +6,13 @@ const withAuth = require('../utils/auth')
 router.get('/', withAuth, (req, res) => {
     Post.findAll({
       where: {
-        // use the ID from the session
         user_id: req.session.user_id
       },
       attributes: [
         'id',
-        'post_url',
+        'body',
         'title',
-        'created_at',
-        [sequelize.literal('(SELECT COUNT(*) FROM vote WHERE post.id = vote.post_id)'), 'vote_count']
+        'created_at'
       ],
       include: [
         {
@@ -49,10 +47,9 @@ router.get('/edit/:id', withAuth, (req, res) => {
         },
         attributes: [
           'id',
-          'post_url',
+          'body',
           'title',
-          'created_at',
-          [sequelize.literal('(SELECT COUNT(*) FROM vote WHERE post.id = vote.post_id)'), 'vote_count']
+          'created_at'
         ],
         include: [
           {
