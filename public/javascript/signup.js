@@ -16,8 +16,19 @@ async function signupFormHandler(event) {
             headers: { 'Content-Type': 'application/json' }
         })
         if(response.ok) {
-            console.log('success')
-            document.location.replace('/login')
+            const response = await fetch('/api/users/login', {
+                method: 'post',
+                body: JSON.stringify({
+                    email,
+                    password
+                }),
+                headers: { 'Content-Type': 'application/json' }
+            })
+            if(response.ok) {
+                document.location.replace('/')
+            } else {
+                alert(response.statusText)
+            }
         } else {
             alert(response.statusText)
         }

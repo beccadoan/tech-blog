@@ -1,15 +1,4 @@
-<article class="post">
-  <div class="title">
-    <h1>{{post.title}}</h1>
-    <h2>{{post.body}}</h2>
-  </div>
-  <div class="meta">
-    {{post.vote_count}} {{format_plural 'point' vote_count}} by {{post.user.username}} on
-    {{format_date post.created_at}}
-    |
-    <a href="/post/{{post.id}}">{{post.comments.length}} {{format_plural 'comment' post.comments.length}}</a>
-  </div>
-</article>
+{{> post-info post}}
 
 {{#if loggedIn}}
 <form class="comment-form">
