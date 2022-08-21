@@ -60,22 +60,6 @@
     min-height: 50px;
   }
   
-  /* form > div {
-    margin-bottom: 2%;
-  } */
-  
-  /* form label {
-    display: block;
-  } */
-  
-  /* .wrapper {
-    width: 100%;
-    min-height: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-  } */
   
   header {
     border-bottom: 1px solid #ccc;
@@ -155,21 +139,6 @@
   #new-post-btn:hover {
       color: rgba(220, 233, 213, 0.5);
   }
-  
-
-  /* .delete-post-btn {
-    background-color: #d41414;
-  } */
-  
-  /* .delete-post-btn:hover {
-    background-color: #ff643d;
-  } */
-  
-  /* .post {
-    margin-bottom: 2%;
-    line-height: 150%;
-  } */
-
 
   .post {
       border: 2px solid rgb(32, 17, 16);
